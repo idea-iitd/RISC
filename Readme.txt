@@ -12,7 +12,7 @@ To execute
 	b) In the case of Binary and Non-Binary, you will be required to give the file name
 	   eg : "DUD"
 		this will be considered as target file "DUD" and queries file "DUD_test"
-
+5) A sample Data directory can be downloaded from "https://tinyurl.com/yb5cs2kj"
 The results are placed at "Data/Results"
 
 
