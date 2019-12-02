@@ -53,6 +53,10 @@ void _swapFingerprints (DataSmall *data, int a, int b) {
 		fp_a[i] = fp_b[i];
 		fp_b[i] = temp;
 	}
+
+	char *tmp   = data->ids[a];
+	data->ids[a]= data->ids[b];
+	data->ids[b]= tmp;
 }
 
 /**

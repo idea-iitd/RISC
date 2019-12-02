@@ -215,7 +215,7 @@ void _loadData_BF (char *fName, arrayListtype *featureIds,
 			u_long newFeatureId = arrayList_IteratorFind_Binary (iterator, featureOld, &found);
 
 			if (!found) {
-				helper_err(__FILE__, __LINE__, "invalid feature values");
+				helper_err(__FILE__, __LINE__, "invalid feature values, the fingerprint has a feature not originally present in the indexing phase");
 			}
 
 			minHeapPlain_add_WO_fail_unique(&minHeap_new, newFeatureId);

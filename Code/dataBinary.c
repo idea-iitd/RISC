@@ -27,15 +27,16 @@ void dataBinary_addMolecule (DataBinary *data, minHeapPlain_Type *minHeap) {
 		arrayList_put(arr, val);
 	}
 
-	data->_fpArray[data->size] = arr;
-	data->molIDsORG[data->size] = data->size+1;
-	data->size++;
+	int size = data->size;
+	data->_fpArray[size] = arr;
+	data->molIDsORG[size] = size+1;
+	data->size = size+1;
 }
 
 DataBinary* new_dataBinary (int maxSize, int numFeatures) {	//allocate memory
 	DataBinary *data = (DataBinary *)    helper_calloc(1,       sizeof(DataBinary),      __FILE__, __LINE__);
 	data->_fpArray   = (arrayListtype **)helper_calloc(maxSize, sizeof(arrayListtype *), __FILE__, __LINE__);
-	data->molIDsORG  = (arrayListtype  *)helper_calloc(maxSize, sizeof(u_long), __FILE__, __LINE__);
+	data->molIDsORG  = (u_long  *)       helper_calloc(maxSize, sizeof(u_long), __FILE__, __LINE__);
 
 	data->_maxSize  	= maxSize;
 	data->numFeatures 	= numFeatures;
